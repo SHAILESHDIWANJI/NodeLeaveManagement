@@ -1,0 +1,68 @@
+
+<header>
+  <h1>Leave Management System</h1>
+  <app-button buttonClass="logout-btn" (click)="logout()">Logout</app-button>
+</header>
+<ng-container *ngIf="leaveList.length > 0">
+
+<div class="leave-container">
+
+  <div class="leave-card" *ngFor="let leave of leaveList">
+
+    <h3>{{ leave.name }}</h3>
+
+    <p>
+      Leave from {{ leave.startDate }}
+      to {{ leave.endDate }}
+    </p>
+
+    <p>
+      Number of days {{ leave.totalLeaveDays }}
+    </p>
+
+    <div class="reason-section">
+      <strong>Reason:</strong>
+      <p>{{ leave.reason }}</p>
+    </div>
+
+    <div
+      class="btn-group"
+      *ngIf="leave.status === 'pending'"
+    >
+      <app-button
+    buttonClass="approve-btn"
+    (click)="approveLeave(leave._id)"
+  >
+    Approve
+  </app-button>
+
+      <app-button
+        buttonClass="reject-btn"
+        (click)="rejectLeave(leave._id)"
+      >
+        Reject
+      </app-button>
+    </div>
+
+    <div
+      class="status approved"
+      *ngIf="leave.status === 'approved'"
+    >
+      ✔ Approved
+    </div>
+
+    <div
+      class="status rejected"
+      *ngIf="leave.status === 'rejected'"
+    >
+      ✖ Rejected
+    </div>
+
+  </div>
+
+</div>
+</ng-container>
+
+<ng-container *ngIf="leaveList.length === 0">
+  <p>No leave applications found.</p>
+</ng-container>

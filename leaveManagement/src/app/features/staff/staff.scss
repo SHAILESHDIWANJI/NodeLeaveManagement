@@ -1,0 +1,156 @@
+:host {
+  display: block;
+  padding: 20px;
+  background: #f4f7fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+.apply-leave-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.leave-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+button {
+  padding: 10px 18px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #125aa0;
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 24px;
+}
+.leave-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  .approved{
+    color: green;
+  }
+  .rejected{
+    color: red;
+  }
+  .pending{
+    color: orange;
+  }
+}
+.leave-card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  width: 19%;
+  margin-bottom: 20px;
+  // border-left: 5px solid #1976d2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.leave-card:hover {
+  transform: translateY(-3px);
+}
+
+.leave-card p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 15px;
+}
+
+.leave-card strong {
+  color: #111;
+}
+
+.leave-card p:last-child {
+  font-weight: 600;
+}
+
+.leave-card p:last-child:has(span.approved) {
+  color: green;
+}
+
+.leave-card p:last-child:has(span.rejected) {
+  color: red;
+}
+
+.leave-card p:last-child:has(span.pending) {
+  color: orange;
+}
+
+ng-container p {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+
+ng-container p {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.leave-counter {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.counter-card {
+  flex: 1;
+  min-width: 180px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  // border-left: 6px solid #1976d2;
+}
+
+.counter-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #444;
+}
+
+.counter-card p {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+// .total {
+//   border-color: #1976d2;
+// }
+
+// .approved {
+//   border-color: green;
+// }
+
+// .rejected {
+//   border-color: red;
+// }

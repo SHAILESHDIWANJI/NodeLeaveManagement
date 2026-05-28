@@ -1,0 +1,53 @@
+<div class="apply-leave-button">
+  <app-button buttonClass="apply-btn" (click)="applyLeave()">Apply leave</app-button>
+</div>
+
+<div class="leave-counter">
+  <div class="counter-card total">
+    <h3>Total Leaves</h3>
+    <p>{{ totalLeaves }}</p>
+  </div>
+
+  <div class="counter-card approved">
+    <h3>Approved</h3>
+    <p>{{ approvedLeaves }}</p>
+  </div>
+
+  <div class="counter-card rejected">
+    <h3>Rejected</h3>
+    <p>{{ rejectedLeaves }}</p>
+  </div>
+</div>
+
+<app-leave-dialog
+  [isOpen]="isOpen"
+  (closeDialog)="handleLeaveCancel()"
+  (submitLeave)="handleLeaveSubmit($event)"
+>
+</app-leave-dialog>
+
+<ng-container *ngIf="leaveList.length > 0">
+  <div class="leave-container">
+    <h2>Your Leave Applications</h2>
+    <div class="leave-list">
+      <div class="leave-card" *ngFor="let leave of leaveList">
+        <p><strong>From:</strong> {{ leave.startDate | date }}</p>
+        <p><strong>To:</strong> {{ leave.endDate | date }}</p>
+        <p><strong>Reason:</strong> {{ leave.reason }}</p>
+        <p
+          [ngClass]="{
+            approved: leave.status === 'approved',
+            rejected: leave.status === 'rejected',
+            pending: leave.status === 'pending',
+          }"
+        >
+          <strong>Status:</strong> {{ leave.status }}
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="leaveList.length === 0">
+  <p>You have not applied for any leaves yet.</p>
+</ng-container>

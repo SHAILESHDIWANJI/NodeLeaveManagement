@@ -1,0 +1,126 @@
+<div class="register-container">
+
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="registerEmployee()"
+    class="register-form"
+  >
+
+    <div class="radio-group">
+
+      <label>
+        <input
+          type="radio"
+          formControlName="role"
+          value="HOD"
+          name="role"
+        />
+        HOD
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          formControlName="role"
+          value="Staff"
+          name="role"
+        />
+        Staff
+      </label>
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          formControlName="firstName"
+          type="text"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          formControlName="lastName"
+          type="text"
+        />
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact</label>
+        <input
+          id="contact"
+          formControlName="contact"
+          type="text"
+        />
+      </div>
+
+    </div>
+
+    <div class="form-group full-width">
+      <label for="department">Department</label>
+
+      <select
+        id="department"
+        formControlName="department"
+      >
+        <option value="Sales">Sales</option>
+        <option value="HR">HR</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input
+          id="userName"
+          formControlName="userName"
+          type="text"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+        />
+      </div>
+
+    </div>
+
+    <button type="submit">
+      Register
+    </button>
+
+    <p class="login-text">
+      Already Registered?
+      <a routerLink="/auth/login">
+        Login
+      </a>
+    </p>
+
+  </form>
+
+</div>

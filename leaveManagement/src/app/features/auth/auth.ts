@@ -1,0 +1,14 @@
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+
+@Component({
+    selector: 'app-auth',
+    templateUrl: './auth.html',
+    imports: [RouterOutlet],
+    styleUrls: ['./auth.scss']
+})
+export class AuthComponent {
+
+    constructor() { }
+
+}   
